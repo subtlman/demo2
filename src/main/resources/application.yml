@@ -1,0 +1,50 @@
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:mapperxml/*.xml
+  configuration:
+    call-setters-on-nulls: true
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/demo1?useUnicode=true&characterEncoding=utf-8&currentSchema=public
+    username: postgres
+    password: postgres
+    type: com.alibaba.druid.pool.DruidDataSource
+  elasticsearch:
+    rest:
+      uris: localhost:9200
+
+server:
+  port: 8043
+  ssl:
+    key-store: classpath:client.p12
+    key-store-password: 12345678
+    key-store-type: PKCS12
+    key-alias: client
+    enabled: true
+
+
+
+#增加swagger文档访问验证（也可以自行添加项目下其他需验证的网址）
+#security:
+#  basic:
+#    path: /swagger-ui.html,/v2/api-docs
+# enabled: true
+#  user:
+#   name: aaa
+#   password: aaa
+
+
+#knife4j:
+#  enable: true
+#  basic:
+#    enable: true
+#    username: admin
+#    password: 123456
+
+
+
