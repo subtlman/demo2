@@ -18,6 +18,22 @@ spring:
     rest:
       uris: localhost:9200
 
+# add by spring-cloud-gateway-core
+# 出现的问题：使得三大器失效了，控制台无法打印操作日志，aop日志正常
+  main:
+    web-application-type: reactive
+
+  cloud:
+    gateway:
+      routes:
+        - id: shop-product
+          uri: https://zhuanlan.zhihu.com/p/488573258
+          order: 0
+          predicates:
+            - Path=/api/**
+#            - Query=name
+#Path 跳转到了uri，/后面的内容跟到uri的/后面去了。
+
 server:
   port: 8043
   ssl:

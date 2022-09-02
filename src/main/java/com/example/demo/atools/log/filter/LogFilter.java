@@ -96,7 +96,7 @@ public class LogFilter implements Filter {
             servletRequest.setAttribute("filter.error", e);
             try {
                 servletRequest.getRequestDispatcher("/api/error/filter").forward(servletRequest, servletResponse);
-            } catch (ServletException | IOException ex) {
+            } catch (Exception ex) {
                 logger.info(atoolsName + ".log.LogFilter执行.forward出错：" + ex);
                 ex.printStackTrace();
             }
