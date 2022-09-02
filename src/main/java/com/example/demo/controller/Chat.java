@@ -122,6 +122,17 @@ public class Chat {
         return resp;
     }
 
+    @GetMapping("/api/demo6")
+    public ServiceResp getChatPrint6() {
+
+        ServiceResp resp = new ServiceResp();
+        resp.success(" chengg");
+
+        int i1 = 1 / 0;
+
+        return resp;
+    }
+
     /**
      * 将16进制转换为二进制
      *
